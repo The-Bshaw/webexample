@@ -1,0 +1,1890 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Wellspring Church — Find a place to belong</title>
+<meta name="description" content="Wellspring Church is a community for the curious, the doubting, and the devoted. Sundays at 9 & 11am. Come as you are." />
+<meta name="theme-color" content="#0B0B0F" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#F5EFE6" media="(prefers-color-scheme: light)" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Wellspring Church — Find a place to belong" />
+<meta property="og:description" content="A community for the curious, the doubting, and the devoted. Sundays at 9 & 11am." />
+<meta property="og:type" content="website" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- Tokens ---------- */
+  :root {
+    --cream: #F5EFE6;
+    --cream-2: #EDE5D8;
+    --paper: #FAF7F2;
+    --ink: #1A1814;
+    --ink-2: #2B2722;
+    --muted: #6E665C;
+    --hair: rgba(26,24,20,.10);
+    --hair-2: rgba(26,24,20,.06);
+    --terracotta: #C8552B;
+    --terracotta-deep: #A8431F;
+    --sage: #6B7F5C;
+    --gold: #C8A961;
+    --plum: #4B2A3A;
+
+    --bg: var(--cream);
+    --surface: var(--paper);
+    --surface-2: var(--cream-2);
+    --text: var(--ink);
+    --text-soft: var(--muted);
+    --border: var(--hair);
+    --border-soft: var(--hair-2);
+    --accent: var(--terracotta);
+    --accent-deep: var(--terracotta-deep);
+    --on-accent: #FFF8EE;
+
+    --r-xs: 6px;
+    --r-sm: 10px;
+    --r-md: 16px;
+    --r-lg: 24px;
+    --r-xl: 32px;
+    --r-2xl: 44px;
+
+    --shadow-sm: 0 1px 2px rgba(26,24,20,.06), 0 2px 6px rgba(26,24,20,.04);
+    --shadow-md: 0 6px 24px rgba(26,24,20,.10), 0 2px 6px rgba(26,24,20,.05);
+    --shadow-lg: 0 24px 60px -12px rgba(26,24,20,.20);
+
+    --container: 1280px;
+    --gutter: clamp(20px, 4vw, 48px);
+
+    --t-display: 'Fraunces', 'Iowan Old Style', 'Apple Garamond', Georgia, serif;
+    --t-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --t-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --ease: cubic-bezier(.2,.7,.2,1);
+    --ease-out: cubic-bezier(0,.6,.2,1);
+  }
+
+  [data-theme="dark"] {
+    --bg: #0B0B0F;
+    --surface: #15151B;
+    --surface-2: #1C1C24;
+    --text: #F2EAD9;
+    --text-soft: #9A958A;
+    --border: rgba(245,239,230,.10);
+    --border-soft: rgba(245,239,230,.06);
+    --accent: #E27845;
+    --accent-deep: #C8552B;
+    --on-accent: #0B0B0F;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+    --shadow-md: 0 8px 30px rgba(0,0,0,.5);
+    --shadow-lg: 0 30px 80px -20px rgba(0,0,0,.7);
+  }
+
+  /* ---------- Reset ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--t-body);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background .35s var(--ease), color .35s var(--ease);
+    overflow-x: hidden;
+  }
+  img, video, svg { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+  input, textarea { font: inherit; color: inherit; }
+
+  ::selection { background: var(--accent); color: var(--on-accent); }
+
+  /* ---------- Type ---------- */
+  .display {
+    font-family: var(--t-display);
+    font-weight: 400;
+    line-height: 0.96;
+    letter-spacing: -0.02em;
+    font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
+  }
+  h1.display { font-size: clamp(48px, 8.4vw, 132px); }
+  h2.display { font-size: clamp(36px, 5.6vw, 80px); letter-spacing: -.02em; }
+  h3.display { font-size: clamp(24px, 2.6vw, 36px); letter-spacing: -.015em; }
+
+  .eyebrow {
+    font-family: var(--t-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    color: var(--text-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content:"";
+    width: 24px; height: 1px; background: currentColor; opacity: .6;
+  }
+
+  .lead { font-size: clamp(18px, 1.4vw, 22px); color: var(--text-soft); max-width: 60ch; }
+
+  /* ---------- Layout ---------- */
+  .container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  section { position: relative; }
+  .section-pad { padding: clamp(80px, 10vw, 160px) 0; }
+
+  /* ---------- Announcement bar ---------- */
+  .announce {
+    background: var(--ink);
+    color: var(--cream);
+    font-size: 13.5px;
+    text-align: center;
+    padding: 10px 16px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    position: relative; z-index: 60;
+  }
+  [data-theme="dark"] .announce { background: var(--accent); color: var(--on-accent); }
+  .announce a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .announce .pulse {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 0 var(--accent);
+    animation: pulse 2s infinite;
+    flex: none;
+  }
+  [data-theme="dark"] .announce .pulse { background: var(--ink); box-shadow: 0 0 0 0 var(--ink); }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(200,85,43,.55); }
+    70% { box-shadow: 0 0 0 12px rgba(200,85,43,0); }
+    100% { box-shadow: 0 0 0 0 rgba(200,85,43,0); }
+  }
+  .announce-close {
+    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    opacity: .7; padding: 4px;
+  }
+  .announce-close:hover { opacity: 1; }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    border-bottom: 1px solid transparent;
+    transition: background .25s var(--ease), border-color .25s var(--ease);
+  }
+  .nav.scrolled { border-color: var(--border); background: color-mix(in srgb, var(--bg) 90%, transparent); }
+  .nav-inner {
+    display: flex; align-items: center; gap: 24px;
+    height: 72px;
+    padding: 0 var(--gutter);
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--t-display);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -.02em;
+    font-variation-settings: "opsz" 96, "SOFT" 30;
+  }
+  .brand-mark {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: linear-gradient(140deg, var(--accent), var(--accent-deep) 60%, var(--plum));
+    position: relative;
+    box-shadow: inset 0 -6px 12px rgba(0,0,0,.18), 0 6px 14px -4px rgba(200,85,43,.4);
+  }
+  .brand-mark::after {
+    content:""; position: absolute; inset: 6px;
+    background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.55), transparent 50%);
+    border-radius: 5px;
+  }
+
+  .nav-links { display: flex; gap: 4px; margin-left: 24px; }
+  .nav-links a {
+    padding: 8px 14px; border-radius: 999px;
+    font-size: 14.5px; color: var(--text-soft);
+    transition: color .2s, background .2s;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--text); background: var(--surface-2); }
+
+  .nav-actions { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .icon-btn {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--text); transition: background .2s;
+  }
+  .icon-btn:hover { background: var(--surface-2); }
+  .icon-btn svg { width: 18px; height: 18px; }
+
+  .mobile-toggle { display: none; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    font-weight: 500; font-size: 14.5px;
+    line-height: 1; letter-spacing: -.005em;
+    transition: transform .2s var(--ease), background .2s var(--ease), color .2s var(--ease), box-shadow .25s var(--ease);
+    will-change: transform;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary {
+    background: var(--ink); color: var(--cream);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn-primary:hover { background: var(--accent); color: var(--on-accent); box-shadow: 0 14px 30px -10px rgba(200,85,43,.55); }
+  [data-theme="dark"] .btn-primary { background: var(--cream); color: var(--ink); }
+  [data-theme="dark"] .btn-primary:hover { background: var(--accent); color: var(--on-accent); }
+  .btn-ghost {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { background: var(--surface-2); border-color: var(--text); }
+  .btn-accent { background: var(--accent); color: var(--on-accent); }
+  .btn-accent:hover { background: var(--accent-deep); }
+  .btn-lg { padding: 18px 30px; font-size: 16px; }
+  .btn .arrow { transition: transform .25s var(--ease); }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: clamp(620px, 92svh, 920px);
+    display: flex; align-items: end;
+    overflow: hidden;
+    color: #fff;
+    isolation: isolate;
+  }
+  .hero-media {
+    position: absolute; inset: 0; z-index: -2;
+    background: #0a0a0a;
+  }
+  .hero-media video, .hero-media img {
+    width: 100%; height: 100%; object-fit: cover;
+    transform: scale(1.05);
+  }
+  .hero-media::after {
+    content:""; position: absolute; inset: 0;
+    background:
+      radial-gradient(120% 80% at 20% 100%, rgba(11,11,15,.85), transparent 60%),
+      linear-gradient(180deg, rgba(11,11,15,.55) 0%, rgba(11,11,15,.20) 35%, rgba(11,11,15,.85) 100%);
+  }
+  .hero-grain {
+    position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .35;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .hero-inner {
+    width: 100%;
+    padding: 0 var(--gutter) clamp(40px, 6vw, 80px);
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    color: rgba(255,255,255,.85);
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before { background: rgba(255,255,255,.7); }
+
+  .hero h1 {
+    margin: 0 0 28px;
+    color: #fff;
+  }
+  .hero h1 .accent {
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+    color: var(--gold);
+    background: linear-gradient(110deg, #F4D9A1, #E8B25A 40%, #C8A961);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.3vw, 20px);
+    color: rgba(255,255,255,.78);
+    max-width: 52ch;
+    margin: 0 0 36px;
+  }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+  .hero-cta .btn-primary { background: #fff; color: var(--ink); }
+  .hero-cta .btn-primary:hover { background: var(--accent); color: var(--on-accent); }
+  .hero-cta .btn-ghost { background: rgba(255,255,255,.08); color: #fff; border-color: rgba(255,255,255,.25); }
+  .hero-cta .btn-ghost:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.55); }
+
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 12px 20px;
+    align-items: center;
+    font-size: 13.5px;
+    color: rgba(255,255,255,.85);
+    border-top: 1px solid rgba(255,255,255,.18);
+    padding-top: 22px;
+  }
+  .hero-meta b { font-weight: 500; color: #fff; }
+  .hero-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.4); }
+  .hero-meta .live {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 10px;
+    background: rgba(226, 120, 69, .2);
+    border: 1px solid rgba(226, 120, 69, .5);
+    border-radius: 999px;
+    font-family: var(--t-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+    color: #ffb38a;
+  }
+  .hero-meta .live::before {
+    content:""; width: 6px; height: 6px; border-radius: 50%;
+    background: #ff8a5c; box-shadow: 0 0 8px #ff8a5c;
+    animation: pulse 1.6s infinite;
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 18px; right: var(--gutter);
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    color: rgba(255,255,255,.7);
+    font-family: var(--t-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  }
+  .hero-scroll-line {
+    width: 1px; height: 56px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,.7));
+    position: relative; overflow: hidden;
+  }
+  .hero-scroll-line::after {
+    content:""; position: absolute; left: 0; right: 0; top: -30%;
+    height: 30%; background: #fff;
+    animation: scroll-cue 2.4s var(--ease) infinite;
+  }
+  @keyframes scroll-cue {
+    0% { transform: translateY(0); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(360%); opacity: 0; }
+  }
+
+  /* ---------- Marquee ticker ---------- */
+  .ticker {
+    background: var(--ink);
+    color: var(--cream);
+    overflow: hidden;
+    border-block: 1px solid var(--ink);
+  }
+  [data-theme="dark"] .ticker { background: var(--accent); color: var(--on-accent); }
+  .ticker-track {
+    display: flex; gap: 56px;
+    padding: 18px 0;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+    font-family: var(--t-display);
+    font-size: clamp(20px, 2.4vw, 32px);
+    font-variation-settings: "opsz" 96, "SOFT" 30;
+    white-space: nowrap;
+  }
+  .ticker-track span { display: inline-flex; align-items: center; gap: 56px; }
+  .ticker-track svg { opacity: .55; flex: none; }
+  @keyframes marquee {
+    from { transform: translate3d(0,0,0); }
+    to   { transform: translate3d(-50%,0,0); }
+  }
+
+  /* ---------- Bento grid: Next Steps ---------- */
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+  }
+  .bento .card {
+    grid-column: span 6;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    padding: 32px;
+    min-height: 280px;
+    display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+  }
+  .bento .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+  }
+  .bento .card.sz-md { grid-column: span 6; }
+  .bento .card.sz-lg { grid-column: span 8; min-height: 360px; }
+  .bento .card.sz-sm { grid-column: span 4; }
+  .bento .card.sz-tall { grid-column: span 4; min-height: 460px; }
+
+  .card .card-body { display: flex; flex-direction: column; height: 100%; gap: 14px; }
+  .card .card-head { display: flex; align-items: center; gap: 12px; }
+  .card .card-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--surface-2); color: var(--accent);
+    display: inline-flex; align-items: center; justify-content: center;
+    flex: none;
+  }
+  .card .card-icon svg { width: 22px; height: 22px; }
+  .card h3 { margin: 0; }
+  .card p { color: var(--text-soft); margin: 0; }
+  .card .card-cta {
+    margin-top: auto;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 500; font-size: 14.5px;
+    color: var(--text);
+  }
+  .card .card-cta .arrow { transition: transform .25s var(--ease); }
+  .card:hover .card-cta .arrow { transform: translateX(4px); }
+
+  .card.feature {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: transparent;
+    overflow: hidden;
+  }
+  [data-theme="dark"] .card.feature { background: linear-gradient(135deg, #2a1c14, #1a1814); }
+  .card.feature p { color: rgba(245,239,230,.78); }
+  .card.feature .card-icon { background: rgba(255,255,255,.08); color: var(--gold); }
+  .card.feature .card-cta { color: var(--cream); }
+  .card.feature::after {
+    content:""; position: absolute; right: -60px; bottom: -60px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(200,169,97,.35), transparent 60%);
+    pointer-events: none;
+  }
+
+  .card.image {
+    padding: 0; min-height: 360px;
+    color: #fff;
+    border: none;
+  }
+  .card.image .card-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    transition: transform .8s var(--ease);
+  }
+  .card.image:hover .card-bg { transform: scale(1.06); }
+  .card.image::before {
+    content:""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(11,11,15,.85));
+    z-index: 1;
+  }
+  .card.image .card-body {
+    position: relative; z-index: 2;
+    padding: 28px;
+    justify-content: end;
+  }
+  .card.image p { color: rgba(255,255,255,.85); }
+
+  /* Section heads */
+  .sec-head {
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: end; gap: 24px;
+    margin-bottom: clamp(36px, 5vw, 56px);
+  }
+  .sec-head .sec-title { display: flex; flex-direction: column; gap: 14px; max-width: 64ch; }
+  .sec-head .sec-title p { color: var(--text-soft); margin: 0; }
+  .sec-head .link {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--text); font-weight: 500; font-size: 14.5px;
+    border-bottom: 1px solid var(--border); padding-bottom: 6px;
+    transition: color .2s, border-color .2s;
+  }
+  .sec-head .link:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- This Week (sermon) ---------- */
+  .sermon {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-2xl);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .sermon-art {
+    position: relative; min-height: 480px;
+    background: linear-gradient(135deg, #2a1c14 0%, #4B2A3A 60%, #C8552B 100%);
+    overflow: hidden;
+  }
+  .sermon-art .blob {
+    position: absolute; border-radius: 50%; filter: blur(40px); opacity: .8;
+  }
+  .sermon-art .blob.a { width: 380px; height: 380px; left: -80px; top: -100px; background: radial-gradient(circle, #E27845, transparent 60%); }
+  .sermon-art .blob.b { width: 320px; height: 320px; right: -60px; bottom: -80px; background: radial-gradient(circle, #C8A961, transparent 60%); }
+  .sermon-art .blob.c { width: 220px; height: 220px; left: 30%; top: 40%; background: radial-gradient(circle, #4B2A3A, transparent 60%); }
+  .sermon-art-inner {
+    position: relative; z-index: 1; height: 100%;
+    padding: 36px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    color: #fff;
+  }
+  .sermon-art .play {
+    width: 88px; height: 88px; border-radius: 50%;
+    background: rgba(255,255,255,.15); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.4);
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff;
+    transition: transform .25s var(--ease), background .25s;
+    align-self: start;
+  }
+  .sermon-art .play:hover { transform: scale(1.06); background: rgba(255,255,255,.25); }
+  .sermon-art .play svg { width: 28px; height: 28px; margin-left: 4px; }
+  .sermon-art h3 {
+    font-family: var(--t-display); font-weight: 400;
+    font-size: clamp(32px, 3.6vw, 52px);
+    line-height: 1; letter-spacing: -.02em;
+    margin: 0;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+  }
+  .sermon-art .meta {
+    display: flex; flex-wrap: wrap; gap: 8px 16px;
+    font-family: var(--t-mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase;
+    color: rgba(255,255,255,.85);
+  }
+
+  .sermon-info {
+    padding: 36px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .sermon-info .pastor { display: flex; align-items: center; gap: 12px; }
+  .sermon-info .avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, #C8A961, #C8552B);
+    color: #fff; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 14px;
+    border: 2px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--border);
+  }
+  .sermon-info p.lead { font-size: 18px; line-height: 1.55; color: var(--text); margin: 0; }
+  .sermon-info .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .sermon-info .stats { display: flex; gap: 24px; padding-top: 20px; border-top: 1px solid var(--border); margin-top: auto; }
+  .sermon-info .stat .num { font-family: var(--t-display); font-size: 28px; line-height: 1; }
+  .sermon-info .stat .lbl { font-family: var(--t-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-soft); margin-top: 6px; }
+
+  /* sermon archive */
+  .sermon-archive { margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .archive-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 20px; display: flex; flex-direction: column; gap: 8px;
+    transition: border-color .2s, transform .25s var(--ease);
+  }
+  .archive-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .archive-card .num { font-family: var(--t-mono); font-size: 11px; letter-spacing: .14em; color: var(--text-soft); text-transform: uppercase; }
+  .archive-card .title { font-family: var(--t-display); font-size: 22px; line-height: 1.05; letter-spacing: -.015em; }
+  .archive-card .row {
+    margin-top: auto; display: flex; align-items: center; justify-content: space-between;
+    padding-top: 14px; border-top: 1px solid var(--border-soft);
+    font-size: 13px; color: var(--text-soft);
+  }
+
+  /* ---------- Plan a Visit (4-up) ---------- */
+  .visit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .visit-card {
+    padding: 28px;
+    border-radius: var(--r-lg);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex; flex-direction: column; gap: 14px;
+    transition: transform .25s var(--ease), background .25s;
+  }
+  .visit-card:hover { transform: translateY(-3px); background: var(--surface-2); }
+  .visit-card .ico {
+    width: 54px; height: 54px; border-radius: 14px;
+    background: linear-gradient(135deg, var(--cream-2), var(--paper));
+    border: 1px solid var(--border);
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--accent);
+  }
+  [data-theme="dark"] .visit-card .ico { background: linear-gradient(135deg, var(--surface-2), var(--surface)); }
+  .visit-card .ico svg { width: 26px; height: 26px; }
+  .visit-card h4 { margin: 0; font-family: var(--t-display); font-size: 22px; letter-spacing: -.01em; font-weight: 500; }
+  .visit-card p { margin: 0; font-size: 15px; color: var(--text-soft); }
+
+  /* ---------- Locations ---------- */
+  .locs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .loc {
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+  }
+  .loc:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .loc-art {
+    height: 220px; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, var(--ink), #2A2520);
+  }
+  .loc-art .map {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(245,239,230,.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(245,239,230,.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  }
+  .loc-art::after {
+    content:""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 55%, rgba(200,85,43,.5), transparent 50%);
+  }
+  .loc-art .pin {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%,-100%);
+    width: 18px; height: 18px; border-radius: 50% 50% 50% 0;
+    background: var(--accent); rotate: -45deg;
+    box-shadow: 0 8px 18px rgba(200,85,43,.6);
+  }
+  .loc-art .pin::after {
+    content:""; position: absolute; inset: 5px;
+    background: var(--cream); border-radius: 50%;
+  }
+  .loc-art .ring {
+    position: absolute; left: 50%; top: 50%; width: 12px; height: 12px;
+    border: 2px solid var(--accent); border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 2.4s var(--ease-out) infinite;
+  }
+  @keyframes ring {
+    0% { width: 12px; height: 12px; opacity: 1; }
+    100% { width: 120px; height: 120px; opacity: 0; }
+  }
+  .loc-info { padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .loc-info .city { font-family: var(--t-display); font-size: 26px; letter-spacing: -.015em; }
+  .loc-info .addr { color: var(--text-soft); font-size: 14.5px; }
+  .loc-info .times {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: 6px;
+  }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 999px; font-family: var(--t-mono); font-size: 11.5px; letter-spacing: .08em;
+  }
+  .loc-info .row {
+    margin-top: 12px; display: flex; align-items: center; justify-content: space-between;
+    padding-top: 14px; border-top: 1px solid var(--border-soft);
+  }
+  .loc-info .row a { color: var(--accent); font-weight: 500; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; }
+
+  /* ---------- Ministries (asymmetric bento) ---------- */
+  .ministries { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 220px; gap: 16px; }
+  .min {
+    position: relative; overflow: hidden;
+    border-radius: var(--r-xl);
+    color: #fff;
+    isolation: isolate;
+    background: var(--ink);
+    transition: transform .35s var(--ease);
+  }
+  .min:hover { transform: scale(1.01); }
+  .min .bg {
+    position: absolute; inset: 0; z-index: -2;
+    background-size: cover; background-position: center;
+    transition: transform 1.2s var(--ease);
+  }
+  .min:hover .bg { transform: scale(1.08); }
+  .min::after {
+    content:""; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(180deg, rgba(11,11,15,.1) 0%, rgba(11,11,15,.85) 100%);
+  }
+  .min .content {
+    position: absolute; inset: 0; padding: 28px;
+    display: flex; flex-direction: column; justify-content: end; gap: 6px;
+  }
+  .min .tag {
+    position: absolute; top: 22px; left: 22px;
+    font-family: var(--t-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    background: rgba(255,255,255,.14); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,.25);
+    padding: 6px 10px; border-radius: 999px;
+  }
+  .min h3 { font-family: var(--t-display); font-size: clamp(24px, 2.6vw, 36px); font-weight: 500; letter-spacing: -.015em; margin: 0; line-height: 1; }
+  .min p { margin: 4px 0 0; color: rgba(255,255,255,.82); font-size: 14.5px; }
+  .min .cta {
+    position: absolute; bottom: 22px; right: 22px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,.92); color: var(--ink);
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: transform .25s var(--ease), background .25s;
+  }
+  .min:hover .cta { transform: rotate(-25deg); background: var(--accent); color: #fff; }
+
+  .min.kids   { grid-column: span 5; grid-row: span 2; }
+  .min.youth  { grid-column: span 4; grid-row: span 1; }
+  .min.young  { grid-column: span 3; grid-row: span 1; }
+  .min.groups { grid-column: span 4; grid-row: span 1; }
+  .min.worship{ grid-column: span 3; grid-row: span 1; }
+  .min.outreach { grid-column: span 7; grid-row: span 1; }
+
+  /* ---------- Stories ---------- */
+  .stories {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  .story {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    padding: 28px;
+    display: flex; flex-direction: column; gap: 18px;
+    transition: transform .3s var(--ease), border-color .3s var(--ease);
+  }
+  .story:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .story .quote-mark {
+    font-family: var(--t-display);
+    font-size: 64px; line-height: .6;
+    color: var(--accent);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  }
+  .story p { font-size: 17px; line-height: 1.55; margin: 0; }
+  .story .who { display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border-soft); }
+  .story .who-av {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--sage), var(--gold));
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 600; font-size: 13px;
+  }
+  .story .who .name { font-weight: 500; font-size: 14.5px; }
+  .story .who .role { font-size: 13px; color: var(--text-soft); }
+
+  /* ---------- Events ---------- */
+  .events { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .event {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+  }
+  .event:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .event-art {
+    height: 200px; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #2a1c14 0%, #4B2A3A 100%);
+  }
+  .event-art.b { background: linear-gradient(135deg, #1f3326, #6B7F5C 100%); }
+  .event-art.c { background: linear-gradient(135deg, #2a1c14, #C8A961 110%); }
+  .event-art .date {
+    position: absolute; left: 18px; top: 18px;
+    background: rgba(255,255,255,.95); color: var(--ink);
+    border-radius: 14px;
+    padding: 8px 12px; text-align: center;
+    min-width: 56px;
+    box-shadow: var(--shadow-sm);
+  }
+  .event-art .date .m { font-family: var(--t-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  .event-art .date .d { font-family: var(--t-display); font-size: 26px; line-height: 1; letter-spacing: -.02em; }
+  .event-art .pattern {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(255,255,255,.2), transparent 40%),
+      radial-gradient(circle at 20% 90%, rgba(0,0,0,.3), transparent 40%);
+    mix-blend-mode: overlay;
+  }
+  .event-info { padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .event-info .meta { font-family: var(--t-mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-soft); }
+  .event-info h4 { margin: 0; font-family: var(--t-display); font-size: 22px; letter-spacing: -.01em; font-weight: 500; }
+  .event-info p { margin: 0; color: var(--text-soft); font-size: 14.5px; }
+  .event-info .row { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-soft); display: flex; justify-content: space-between; align-items: center; font-size: 13.5px; color: var(--text-soft); }
+
+  /* ---------- Beliefs strip ---------- */
+  .beliefs {
+    background:
+      radial-gradient(80% 60% at 90% 0%, rgba(200,85,43,.10), transparent 60%),
+      radial-gradient(60% 60% at 10% 100%, rgba(107,127,92,.10), transparent 60%),
+      var(--surface);
+    border-block: 1px solid var(--border);
+  }
+  .beliefs-inner { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: center; }
+  .beliefs blockquote {
+    margin: 0; font-family: var(--t-display);
+    font-size: clamp(28px, 3.6vw, 56px); line-height: 1.05; letter-spacing: -.02em;
+    font-variation-settings: "opsz" 144, "SOFT" 60;
+  }
+  .beliefs blockquote em {
+    font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+    color: var(--accent);
+  }
+  .beliefs .who-line { margin-top: 24px; font-family: var(--t-mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-soft); }
+  .beliefs .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; }
+  .pillar h4 { margin: 0 0 6px; font-family: var(--t-display); font-size: 20px; font-weight: 500; letter-spacing: -.01em; display: flex; align-items: center; gap: 10px; }
+  .pillar h4::before {
+    content:""; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .pillar p { margin: 0; color: var(--text-soft); font-size: 14.5px; }
+
+  /* ---------- App / Newsletter combo ---------- */
+  .combo {
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: var(--r-2xl);
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+  }
+  [data-theme="dark"] .combo { background: linear-gradient(135deg, #1a1814, #2a1c14); }
+  .combo::before {
+    content:""; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(40% 60% at 100% 0%, rgba(200,85,43,.4), transparent 50%),
+      radial-gradient(40% 60% at 0% 100%, rgba(200,169,97,.18), transparent 50%);
+  }
+  .combo-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; padding: clamp(40px, 5vw, 72px); align-items: center; }
+  .combo h2 { margin: 0 0 18px; color: #fff; }
+  .combo p.lead { color: rgba(245,239,230,.78); margin-bottom: 28px; }
+  .stores { display: flex; flex-wrap: wrap; gap: 10px; }
+  .store {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 12px 18px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+    border-radius: 14px;
+    transition: background .2s, border-color .2s;
+  }
+  .store:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.4); }
+  .store .lbl { display: flex; flex-direction: column; line-height: 1.1; }
+  .store .lbl small { font-size: 10.5px; opacity: .65; letter-spacing: .08em; text-transform: uppercase; }
+  .store .lbl b { font-size: 16px; font-weight: 500; }
+
+  .nl-card {
+    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.14);
+    border-radius: var(--r-lg); padding: 28px;
+  }
+  .nl-card h3 { margin: 0 0 8px; font-family: var(--t-display); font-size: 26px; letter-spacing: -.015em; font-weight: 500; }
+  .nl-card p { margin: 0 0 20px; color: rgba(245,239,230,.72); font-size: 14.5px; }
+  .nl-form { display: flex; gap: 8px; }
+  .nl-form input {
+    flex: 1; padding: 14px 16px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.18);
+    border-radius: 999px; color: #fff;
+    outline: none;
+  }
+  .nl-form input::placeholder { color: rgba(245,239,230,.55); }
+  .nl-form input:focus { border-color: var(--accent); background: rgba(255,255,255,.10); }
+  .nl-form button {
+    padding: 14px 20px; border-radius: 999px;
+    background: var(--accent); color: var(--on-accent);
+    font-weight: 500; transition: background .2s, transform .15s;
+  }
+  .nl-form button:hover { background: var(--accent-deep); }
+  .nl-form button:active { transform: scale(.96); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding-top: clamp(60px, 7vw, 96px);
+    padding-bottom: 32px;
+  }
+  .foot-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 36px;
+    padding-bottom: 56px; border-bottom: 1px solid var(--border);
+  }
+  .foot-brand p { color: var(--text-soft); margin-top: 14px; max-width: 36ch; font-size: 14.5px; }
+  .foot-col h5 { font-family: var(--t-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--text-soft); margin: 0 0 14px; }
+  .foot-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .foot-col a { color: var(--text); transition: color .2s; font-size: 14.5px; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom { display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; padding-top: 28px; font-size: 13px; color: var(--text-soft); }
+  .foot-bottom .legal { display: flex; gap: 18px; flex-wrap: wrap; }
+  .socials { display: flex; gap: 8px; margin-top: 18px; }
+  .socials a {
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--border);
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: background .2s, border-color .2s, color .2s;
+  }
+  .socials a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .socials svg { width: 16px; height: 16px; }
+
+  /* big wordmark */
+  .big-mark {
+    font-family: var(--t-display); font-weight: 400;
+    font-size: clamp(80px, 18vw, 280px);
+    line-height: .9; letter-spacing: -.04em;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--border);
+    margin: clamp(32px, 5vw, 56px) 0 0;
+    text-align: center;
+    font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
+    user-select: none;
+  }
+  .big-mark em { font-style: italic; -webkit-text-stroke: 1px color-mix(in srgb, var(--accent) 60%, transparent); font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; }
+
+  /* ---------- Mobile sticky CTA ---------- */
+  .mobile-cta {
+    position: fixed; left: 16px; right: 16px; bottom: 16px;
+    z-index: 40;
+    display: none;
+    background: var(--ink); color: var(--cream);
+    border-radius: 999px;
+    padding: 14px 20px;
+    align-items: center; justify-content: center; gap: 10px;
+    box-shadow: 0 16px 40px rgba(0,0,0,.25);
+    font-weight: 500;
+  }
+  [data-theme="dark"] .mobile-cta { background: var(--accent); color: var(--on-accent); }
+
+  /* ---------- Reveal animation ---------- */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+  }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal-children > * {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity .7s var(--ease-out), transform .7s var(--ease-out);
+  }
+  .reveal-children.in > * { opacity: 1; transform: none; }
+  .reveal-children.in > *:nth-child(2) { transition-delay: .06s; }
+  .reveal-children.in > *:nth-child(3) { transition-delay: .12s; }
+  .reveal-children.in > *:nth-child(4) { transition-delay: .18s; }
+  .reveal-children.in > *:nth-child(5) { transition-delay: .24s; }
+  .reveal-children.in > *:nth-child(6) { transition-delay: .30s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-children > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .ticker-track, .hero-scroll-line::after, .pulse, .loc-art .ring, .announce .pulse { animation: none !important; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1024px) {
+    .nav-links { display: none; }
+    .mobile-toggle { display: inline-flex; }
+
+    .bento .card.sz-md, .bento .card.sz-lg, .bento .card.sz-sm, .bento .card.sz-tall, .bento .card { grid-column: span 6; min-height: 240px; }
+    .visit-grid { grid-template-columns: repeat(2, 1fr); }
+    .locs, .stories, .events { grid-template-columns: repeat(2, 1fr); }
+    .ministries { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 200px; }
+    .ministries .min.kids { grid-column: span 6; grid-row: span 2; }
+    .ministries .min.youth { grid-column: span 6; }
+    .ministries .min.young { grid-column: span 6; }
+    .ministries .min.groups { grid-column: span 3; }
+    .ministries .min.worship { grid-column: span 3; }
+    .ministries .min.outreach { grid-column: span 6; }
+
+    .sermon { grid-template-columns: 1fr; }
+    .sermon-art { min-height: 320px; }
+    .sermon-archive { grid-template-columns: 1fr 1fr; }
+
+    .beliefs-inner { grid-template-columns: 1fr; gap: 36px; }
+    .combo-grid { grid-template-columns: 1fr; }
+
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 36px 24px; }
+  }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .bento .card { grid-column: span 12; min-height: 220px; }
+    .visit-grid { grid-template-columns: 1fr 1fr; }
+    .locs, .stories, .events { grid-template-columns: 1fr; }
+    .sermon-archive { grid-template-columns: 1fr; }
+    .sec-head { grid-template-columns: 1fr; }
+    .sec-head .link { justify-self: start; }
+    .hero-scroll { display: none; }
+    .mobile-cta { display: inline-flex; }
+    .announce-close { right: 8px; }
+    .foot-grid { grid-template-columns: 1fr; }
+    body { padding-bottom: 80px; } /* room for mobile CTA */
+    .hero h1 { letter-spacing: -.025em; }
+  }
+
+  /* ---------- Mobile sheet menu ---------- */
+  .sheet { position: fixed; inset: 0; z-index: 70; pointer-events: none; }
+  .sheet-bg {
+    position: absolute; inset: 0; background: rgba(11,11,15,.55);
+    opacity: 0; transition: opacity .3s var(--ease);
+  }
+  .sheet-panel {
+    position: absolute; right: 0; top: 0; bottom: 0; width: min(86vw, 380px);
+    background: var(--bg); padding: 28px;
+    transform: translateX(100%); transition: transform .35s var(--ease);
+    display: flex; flex-direction: column; gap: 20px;
+    border-left: 1px solid var(--border);
+  }
+  .sheet.open { pointer-events: auto; }
+  .sheet.open .sheet-bg { opacity: 1; }
+  .sheet.open .sheet-panel { transform: none; }
+  .sheet-panel a.nav-link {
+    font-family: var(--t-display); font-size: 28px; letter-spacing: -.015em;
+    border-bottom: 1px solid var(--border); padding-bottom: 14px;
+  }
+  .sheet-panel .top { display: flex; justify-content: space-between; align-items: center; }
+  .sheet-close { width: 40px; height: 40px; border-radius: 50%; background: var(--surface-2); display: inline-flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body>
+
+  <!-- =================== Announcement Bar =================== -->
+  <div class="announce" id="announce">
+    <span class="pulse" aria-hidden="true"></span>
+    <span><b>This Sunday:</b> Week 3 of <em>Hope Recovered</em> · 9 &amp; 11am · <a href="#visit">Plan your visit →</a></span>
+    <button class="announce-close" id="announceClose" aria-label="Dismiss">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <!-- =================== Nav =================== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="brand" aria-label="Wellspring Church home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Wellspring</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#visit">Visit</a>
+        <a href="#watch">Watch</a>
+        <a href="#ministries">Ministries</a>
+        <a href="#events">Events</a>
+        <a href="#about">About</a>
+        <a href="#give">Give</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="search" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <button class="icon-btn" id="theme" aria-label="Toggle theme">
+          <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#visit" class="btn btn-primary" style="margin-left:6px">
+          Plan a visit
+          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <button class="icon-btn mobile-toggle" id="menuOpen" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile sheet -->
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="sheet-bg" data-close></div>
+    <div class="sheet-panel" role="dialog" aria-modal="true">
+      <div class="top">
+        <span class="brand"><span class="brand-mark"></span> Wellspring</span>
+        <button class="sheet-close" data-close aria-label="Close menu">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <a class="nav-link" href="#visit" data-close>Visit</a>
+      <a class="nav-link" href="#watch" data-close>Watch</a>
+      <a class="nav-link" href="#ministries" data-close>Ministries</a>
+      <a class="nav-link" href="#events" data-close>Events</a>
+      <a class="nav-link" href="#about" data-close>About</a>
+      <a class="nav-link" href="#give" data-close>Give</a>
+      <a href="#visit" class="btn btn-primary btn-lg" style="margin-top:auto" data-close>Plan a visit →</a>
+    </div>
+  </div>
+
+  <!-- =================== Hero =================== -->
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1920&q=70">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-people-praying-during-religious-service-4654-large.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <span class="eyebrow hero-eyebrow">A church for the unfinished story</span>
+      <h1 class="display reveal">
+        Come as you are.<br>
+        <span class="accent">Belong</span> before you<br>
+        believe.
+      </h1>
+      <p class="hero-sub reveal">Wellspring is a community for the curious, the doubting, and the devoted — gathering each Sunday to remember that grace gets here first.</p>
+      <div class="hero-cta reveal">
+        <a href="#visit" class="btn btn-primary btn-lg">
+          Plan your visit
+          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#watch" class="btn btn-ghost btn-lg">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch this week
+        </a>
+      </div>
+      <div class="hero-meta">
+        <span class="live">On Air Sundays</span>
+        <span><b>Sundays</b> · 9:00 &amp; 11:00 am</span>
+        <span class="dot"></span>
+        <span>Three campuses across the metro</span>
+        <span class="dot"></span>
+        <span>Kids &amp; nursery every service</span>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      Scroll
+      <span class="hero-scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- =================== Marquee Ticker =================== -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>
+        Welcome home
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>
+        Real questions, real faith
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14.39 8.26 21 9l-5 4.87L17.18 21 12 17.27 6.82 21 8 13.87 3 9l6.61-.74Z"/></svg>
+        Better together
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>
+        Hope is here
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.35-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.65-7 10-7 10z"/></svg>
+        Welcome home
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>
+        Real questions, real faith
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14.39 8.26 21 9l-5 4.87L17.18 21 12 17.27 6.82 21 8 13.87 3 9l6.61-.74Z"/></svg>
+        Better together
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>
+        Hope is here
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.35-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.65-7 10-7 10z"/></svg>
+      </span>
+    </div>
+  </div>
+
+  <!-- =================== Bento: Next Steps =================== -->
+  <section class="section-pad" id="visit">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-title">
+          <span class="eyebrow">Take your next step</span>
+          <h2 class="display">Whatever brought you here, <em>there's a place for you.</em></h2>
+        </div>
+        <a href="#visit" class="link">All next steps <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="bento reveal-children">
+        <a href="#visit" class="card sz-tall image" style="grid-column: span 4; grid-row: span 2;">
+          <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=900&q=70');"></div>
+          <div class="card-body">
+            <div class="card-head">
+              <span class="card-icon" style="background:rgba(255,255,255,.15); color:#fff; backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.3);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span class="eyebrow" style="color:rgba(255,255,255,.85)">For new guests</span>
+            </div>
+            <h3 class="display">I'm new here</h3>
+            <p>What to expect, where to park, what your kids will love. Two minutes to feel ready for Sunday.</p>
+            <span class="card-cta">
+              Plan your visit
+              <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#watch" class="card feature sz-md" style="grid-column: span 8;">
+          <div class="card-body">
+            <div class="card-head">
+              <span class="card-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="eyebrow" style="color: rgba(245,239,230,.7)">This week's message</span>
+            </div>
+            <h3 class="display">Hope, recovered.<br><em style="font-style: italic; color: var(--gold); font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;">A series for the tired.</em></h3>
+            <p>Pastor Maya Bennett opens Romans 8 — what to do when the story you were promised isn't the story you're living.</p>
+            <span class="card-cta">
+              Watch the latest sermon
+              <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#give" class="card sz-sm" style="grid-column: span 4;">
+          <div class="card-body">
+            <div class="card-head">
+              <span class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l8.84 8.84 8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </span>
+              <span class="eyebrow">Generosity</span>
+            </div>
+            <h3 class="display" style="font-size: clamp(22px, 2vw, 28px);">Give online</h3>
+            <p>One-tap giving, recurring gifts, and text-to-give at <code style="font-family:var(--t-mono); font-size:13px; padding:2px 6px; background:var(--surface-2); border-radius:6px;">GIVE 84321</code>.</p>
+            <span class="card-cta">
+              Make a gift
+              <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#ministries" class="card sz-sm" style="grid-column: span 4;">
+          <div class="card-body">
+            <div class="card-head">
+              <span class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </span>
+              <span class="eyebrow">Find community</span>
+            </div>
+            <h3 class="display" style="font-size: clamp(22px, 2vw, 28px);">Join a group</h3>
+            <p>Smaller circles meeting in homes, cafés, and online — for parents, students, mentors, and more.</p>
+            <span class="card-cta">
+              Browse groups
+              <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#" class="card sz-sm" style="grid-column: span 4;">
+          <div class="card-body">
+            <div class="card-head">
+              <span class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l18-8-8 18-2-7-8-3z"/></svg>
+              </span>
+              <span class="eyebrow">We'll pray with you</span>
+            </div>
+            <h3 class="display" style="font-size: clamp(22px, 2vw, 28px);">Request prayer</h3>
+            <p>Send anything — privately. A pastor will reach out within 24 hours, no expectations.</p>
+            <span class="card-cta">
+              Share a request
+              <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== This Week / Sermon =================== -->
+  <section class="section-pad" id="watch" style="background: var(--surface-2);">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-title">
+          <span class="eyebrow">This Sunday's message</span>
+          <h2 class="display">Words for the week ahead.</h2>
+          <p>Catch the latest message in 28 minutes — or take it deeper with the discussion guide and devotional.</p>
+        </div>
+        <a href="#" class="link">All sermons <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <article class="sermon reveal">
+        <div class="sermon-art">
+          <span class="blob a"></span>
+          <span class="blob b"></span>
+          <span class="blob c"></span>
+          <div class="sermon-art-inner">
+            <button class="play" aria-label="Play sermon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <div>
+              <div class="meta" style="margin-bottom: 14px;">
+                <span>Series · Hope Recovered</span>
+                <span>·</span>
+                <span>Week 3 of 6</span>
+              </div>
+              <h3>When the morning takes too long</h3>
+              <div class="meta" style="margin-top: 14px;">
+                <span>April 28, 2026</span>
+                <span>·</span>
+                <span>28 min</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sermon-info">
+          <div class="pastor">
+            <span class="avatar">MB</span>
+            <div>
+              <div style="font-weight:500">Pastor Maya Bennett</div>
+              <div style="font-size:13px; color: var(--text-soft);">Lead Pastor</div>
+            </div>
+          </div>
+          <p class="lead">"Romans 8 doesn't promise the wait will be short. It promises we won't wait alone — and that the groaning we feel is the labor pains of something being born."</p>
+          <div class="actions">
+            <button class="btn btn-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              Watch
+            </button>
+            <button class="btn btn-ghost">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-7h3v5zM3 19a2 2 0 0 0 2 2h1v-7H3v5z"/></svg>
+              Listen
+            </button>
+            <button class="btn btn-ghost">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+              Discussion guide
+            </button>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="num">2,184</div>
+              <div class="lbl">Watching</div>
+            </div>
+            <div class="stat">
+              <div class="num">96%</div>
+              <div class="lbl">Finished</div>
+            </div>
+            <div class="stat">
+              <div class="num">412</div>
+              <div class="lbl">Notes saved</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="sermon-archive reveal-children">
+        <a href="#" class="archive-card">
+          <span class="num">02 · April 21</span>
+          <span class="title">When grief outlives the funeral</span>
+          <div class="row"><span>26 min · Pastor Devon Park</span><span>→</span></div>
+        </a>
+        <a href="#" class="archive-card">
+          <span class="num">01 · April 14</span>
+          <span class="title">A theology of starting over</span>
+          <div class="row"><span>31 min · Pastor Maya Bennett</span><span>→</span></div>
+        </a>
+        <a href="#" class="archive-card">
+          <span class="num">Series · Spring 2026</span>
+          <span class="title">Hope Recovered: full series</span>
+          <div class="row"><span>6 messages · Romans 8</span><span>→</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== Plan a Visit (4-up) =================== -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-title">
+          <span class="eyebrow">What to expect</span>
+          <h2 class="display">Sunday, in <em>four small details.</em></h2>
+          <p>No dress code. No insider lingo. No pressure. Just a warm room, real songs, an honest message, and people who want to know your name.</p>
+        </div>
+      </div>
+
+      <div class="visit-grid reveal-children">
+        <div class="visit-card">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </span>
+          <h4>About 70 minutes</h4>
+          <p>Worship music, an honest message, and a moment to respond. Doors open 30 minutes before each service.</p>
+        </div>
+        <div class="visit-card">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-6 9 6v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+          </span>
+          <h4>Free parking, easy entry</h4>
+          <p>Look for our team in orange vests. They'll save you a great spot and walk you straight to the welcome center.</p>
+        </div>
+        <div class="visit-card">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11V7a3 3 0 1 1 6 0v4"/><rect x="5" y="11" width="14" height="10" rx="2"/></svg>
+          </span>
+          <h4>Kids will love it</h4>
+          <p>Birth–5th grade have age-appropriate environments with secure check-in. Trained leaders, every weekend.</p>
+        </div>
+        <div class="visit-card">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <h4>Come as you are</h4>
+          <p>Jeans, suits, sweats, scrubs — all welcome. Whatever you're carrying today, you don't have to carry it alone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== Locations =================== -->
+  <section class="section-pad" style="background: var(--surface-2);">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-title">
+          <span class="eyebrow">Three campuses, one church</span>
+          <h2 class="display">Find a Wellspring near you.</h2>
+        </div>
+        <a href="#" class="link">All locations <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="locs reveal-children">
+        <article class="loc">
+          <div class="loc-art">
+            <div class="map"></div>
+            <span class="ring"></span>
+            <span class="pin"></span>
+          </div>
+          <div class="loc-info">
+            <div class="city">Riverside</div>
+            <div class="addr">412 W. Ferguson Ave · Riverside, MO 64168</div>
+            <div class="times">
+              <span class="chip">9:00 am</span>
+              <span class="chip">11:00 am</span>
+              <span class="chip">5:00 pm</span>
+            </div>
+            <div class="row">
+              <a href="#">Get directions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+              <span style="font-size:13px;color:var(--text-soft)">Flagship · Kids &amp; nursery</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="loc">
+          <div class="loc-art">
+            <div class="map" style="background-size:36px 36px"></div>
+            <span class="ring"></span>
+            <span class="pin"></span>
+          </div>
+          <div class="loc-info">
+            <div class="city">Northside</div>
+            <div class="addr">22 N. Cherry St · Westport, MO 64111</div>
+            <div class="times">
+              <span class="chip">9:30 am</span>
+              <span class="chip">11:15 am</span>
+            </div>
+            <div class="row">
+              <a href="#">Get directions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+              <span style="font-size:13px;color:var(--text-soft)">Multilingual · ASL</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="loc">
+          <div class="loc-art">
+            <div class="map" style="background-size:24px 24px"></div>
+            <span class="ring"></span>
+            <span class="pin"></span>
+          </div>
+          <div class="loc-info">
+            <div class="city">Online</div>
+            <div class="addr">Live + on-demand · wellspring.church/watch</div>
+            <div class="times">
+              <span class="chip">Live · 9 am</span>
+              <span class="chip">Live · 11 am</span>
+              <span class="chip">On demand</span>
+            </div>
+            <div class="row">
+              <a href="#">Watch live <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+              <span style="font-size:13px;color:var(--text-soft)">Chat hosts on call</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== Ministries (Bento) =================== -->
+  <section class="section-pad" id="ministries">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-title">
+          <span class="eyebrow">For every season of life</span>
+          <h2 class="display">Ministries &amp; <em>everyday faith.</em></h2>
+        </div>
+        <a href="#" class="link">All ministries <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="ministries reveal-children">
+        <a href="#" class="min kids">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=70')"></div>
+          <span class="tag">Birth – 5th</span>
+          <div class="content">
+            <h3>Wellspring Kids</h3>
+            <p>Where Sunday is the favorite hour of every kid's week.</p>
+          </div>
+          <span class="cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a href="#" class="min youth">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=70')"></div>
+          <span class="tag">6th – 12th</span>
+          <div class="content">
+            <h3>Students</h3>
+            <p>Wednesday nights · pizza, doubt, hope.</p>
+          </div>
+          <span class="cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a href="#" class="min young">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=900&q=70')"></div>
+          <span class="tag">18 – 29</span>
+          <div class="content">
+            <h3>Young adults</h3>
+          </div>
+          <span class="cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a href="#" class="min groups">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=70')"></div>
+          <span class="tag">Community</span>
+          <div class="content">
+            <h3>Small groups</h3>
+            <p>Smaller circles for the long road.</p>
+          </div>
+          <span class="cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a href="#" class="min worship">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=900&q=70')"></div>
+          <span class="tag">Music · Tech</span>
+          <div class="content">
+            <h3>Worship</h3>
+          </div>
+          <span class="cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a href="#" class="min outreach">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=70')"></div>
+          <span class="tag">Local · Global</span>
+          <div class="content">
+            <h3>Outreach &amp; missions</h3>
+            <p>Loving our neighbors here, partnering with the church everywhere.</p>
+          </div>
+          <span class="cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== Stories =================== -->
+  <section class="section-pad" style="background: var(--surface-2);">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-title">
+          <span class="eyebrow">In their words</span>
+          <h2 class="display">Stories from the table.</h2>
+        </div>
+        <a href="#" class="link">Share your story <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="stories reveal-children">
+        <article class="story">
+          <span class="quote-mark">"</span>
+          <p>I came in skeptical. I sat in the back. By month three, somebody knew my coffee order. By month six, I was being baptized — still asking questions, just no longer alone with them.</p>
+          <div class="who">
+            <span class="who-av">JR</span>
+            <div>
+              <div class="name">Jordan Rivera</div>
+              <div class="role">Riverside · attending since 2024</div>
+            </div>
+          </div>
+        </article>
+        <article class="story">
+          <span class="quote-mark">"</span>
+          <p>Our small group held us through a miscarriage we didn't tell anyone else about for six months. Meals showed up. Texts kept coming. They didn't try to fix it. They just stayed.</p>
+          <div class="who">
+            <span class="who-av" style="background:linear-gradient(135deg,#4B2A3A,#C8552B)">EL</span>
+            <div>
+              <div class="name">Elena &amp; Luca Hart</div>
+              <div class="role">Northside · group leaders</div>
+            </div>
+          </div>
+        </article>
+        <article class="story">
+          <span class="quote-mark">"</span>
+          <p>I'm a 19-year-old who didn't grow up in church. The first Sunday somebody handed me a pour-over and told me I didn't have to believe anything yet. That's the day my heart started to listen.</p>
+          <div class="who">
+            <span class="who-av" style="background:linear-gradient(135deg,#6B7F5C,#C8A961)">SK</span>
+            <div>
+              <div class="name">Sam Kim</div>
+              <div class="role">Online · Young Adults</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== Events =================== -->
+  <section class="section-pad" id="events">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-title">
+          <span class="eyebrow">What's happening</span>
+          <h2 class="display">Upcoming events.</h2>
+        </div>
+        <a href="#" class="link">Full calendar <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="events reveal-children">
+        <article class="event">
+          <div class="event-art">
+            <div class="pattern"></div>
+            <div class="date"><div class="m">May</div><div class="d">10</div></div>
+          </div>
+          <div class="event-info">
+            <span class="meta">Sun · 6:00 pm · Riverside</span>
+            <h4>Mother's Day Worship Night</h4>
+            <p>An evening of music, prayer, and a candle-lit reflection — for moms, daughters, sisters, and everyone in between.</p>
+            <div class="row"><span>Free · childcare provided</span><span style="color: var(--accent)">RSVP →</span></div>
+          </div>
+        </article>
+        <article class="event">
+          <div class="event-art b">
+            <div class="pattern"></div>
+            <div class="date"><div class="m">May</div><div class="d">17</div></div>
+          </div>
+          <div class="event-info">
+            <span class="meta">Sat · 9:00 am · Northside</span>
+            <h4>Serve Day: Cherry St. Cleanup</h4>
+            <p>Coffee, work gloves, and a few hundred neighbors — let's love our city in the most practical way we know.</p>
+            <div class="row"><span>All ages welcome</span><span style="color: var(--accent)">Sign up →</span></div>
+          </div>
+        </article>
+        <article class="event">
+          <div class="event-art c">
+            <div class="pattern"></div>
+            <div class="date"><div class="m">May</div><div class="d">24</div></div>
+          </div>
+          <div class="event-info">
+            <span class="meta">Sat · 2:00 pm · All campuses</span>
+            <h4>Baptism Sunday</h4>
+            <p>Whether you're 8 or 80 — if you're ready to take the next step, we'd be honored to walk it with you.</p>
+            <div class="row"><span>Decide that morning</span><span style="color: var(--accent)">Learn more →</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== Beliefs / About =================== -->
+  <section class="section-pad beliefs" id="about">
+    <div class="container beliefs-inner reveal">
+      <div>
+        <span class="eyebrow">What we hold</span>
+        <blockquote class="display" style="margin-top: 22px;">
+          We believe the gospel is good news <em>before</em> it's good advice — and that the same grace that welcomes us is the grace that grows us.
+        </blockquote>
+        <div class="who-line">— Our shared confession · written 2024</div>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <h4>Scripture, with humility</h4>
+          <p>The Bible is our authority — and we read it together, slowly, in community, with the church across history.</p>
+        </div>
+        <div class="pillar">
+          <h4>Jesus, at the center</h4>
+          <p>Every page, every prayer, every program is finally about him. If it's not, we'd rather drop it.</p>
+        </div>
+        <div class="pillar">
+          <h4>Spirit, not strategy</h4>
+          <p>We can plan and prepare — and then we have to depend. We pray as if it actually matters, because it does.</p>
+        </div>
+        <div class="pillar">
+          <h4>People, not projects</h4>
+          <p>You are not a metric. You are not a target audience. You are someone Jesus loves. That changes everything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== App + Newsletter combo =================== -->
+  <section class="section-pad" id="give">
+    <div class="container">
+      <div class="combo reveal">
+        <div class="combo-grid">
+          <div>
+            <span class="eyebrow" style="color: rgba(245,239,230,.7);">In your pocket</span>
+            <h2 class="display" style="margin-top: 18px;">Take the church<br><em style="font-style: italic; color: var(--gold); font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;">with you everywhere.</em></h2>
+            <p class="lead">Sermon notes that sync. Daily devotionals from your pastors. One-tap giving. Live chat with a real human on Sundays. And no, we don't want your data — just your weekday.</p>
+            <div class="stores">
+              <a href="#" class="store" aria-label="Download on the App Store">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.07c-.04-3.13 2.56-4.63 2.67-4.7-1.46-2.13-3.73-2.42-4.53-2.45-1.93-.2-3.77 1.13-4.75 1.13-.99 0-2.5-1.11-4.11-1.08-2.11.03-4.06 1.23-5.15 3.12-2.2 3.81-.56 9.45 1.58 12.55 1.04 1.52 2.28 3.22 3.91 3.16 1.57-.06 2.16-1.01 4.06-1.01 1.89 0 2.43 1.01 4.09.98 1.69-.03 2.76-1.55 3.79-3.07 1.19-1.76 1.68-3.47 1.71-3.56-.04-.02-3.27-1.26-3.31-4.99zM13.99 3.55C14.85 2.5 15.43 1.05 15.27-.4c-1.25.05-2.76.83-3.66 1.87-.8.93-1.5 2.42-1.31 3.83 1.39.11 2.81-.7 3.69-1.75z"/></svg>
+                <span class="lbl"><small>Download on the</small><b>App Store</b></span>
+              </a>
+              <a href="#" class="store" aria-label="Get it on Google Play">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.6c-.4.4-.6 1-.6 1.8v17.2c0 .8.2 1.4.6 1.8l11.4-11.4-11.4-9.4zM17.4 11.4l3.4 2c.8.4.8 1.6 0 2l-3.4 2-3.4-3 3.4-3zm-3-1.2L4 1.2c.2-.1.5-.2.8-.2.4 0 .8.2 1.2.4l9 5.2-1 1.6zm0 3.6l1 1.6-9 5.2c-.4.2-.8.4-1.2.4-.3 0-.6-.1-.8-.2l10.4-9z"/></svg>
+                <span class="lbl"><small>Get it on</small><b>Google Play</b></span>
+              </a>
+            </div>
+          </div>
+          <div class="nl-card">
+            <h3>The Wellspring weekly</h3>
+            <p>One short email. Every Friday. Sermon recap, this week's prayer, a song to sit with — and nothing else.</p>
+            <form class="nl-form" id="nlForm" onsubmit="return false;">
+              <input type="email" placeholder="you@yourname.com" required aria-label="Email address"/>
+              <button>Subscribe</button>
+            </form>
+            <div id="nlStatus" style="margin-top:10px; font-size: 13px; color: rgba(245,239,230,.65); min-height: 18px;"></div>
+            <div style="margin-top:18px; display:flex; gap:18px; font-size: 12.5px; color: rgba(245,239,230,.6);">
+              <span>· No spam, ever</span>
+              <span>· Unsubscribe in one tap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== Big Wordmark =================== -->
+  <div class="container">
+    <div class="big-mark" aria-hidden="true">
+      Wellspring <em>Church.</em>
+    </div>
+  </div>
+
+  <!-- =================== Footer =================== -->
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <span class="brand"><span class="brand-mark"></span> Wellspring</span>
+          <p>A community for the curious, the doubting, and the devoted. Three campuses across Kansas City — and one online front door.</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.7-1.7C18 5 12 5 12 5s-6 0-7.9.5A2.5 2.5 0 0 0 2.4 7.2C2 9 2 12 2 12s0 3 .4 4.8a2.5 2.5 0 0 0 1.7 1.7C6 19 12 19 12 19s6 0 7.9-.5a2.5 2.5 0 0 0 1.7-1.7C22 15 22 12 22 12s0-3-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+            <a href="#" aria-label="Spotify podcast"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.6 14.4a.7.7 0 0 1-1 .2c-2.7-1.6-6-2-9.9-1a.7.7 0 1 1-.4-1.4c4.3-1 8-.6 11 1.2a.7.7 0 0 1 .3 1zm1.2-2.7a.9.9 0 0 1-1.2.3c-3-1.9-7.7-2.4-11.3-1.3a.9.9 0 1 1-.5-1.7c4.1-1.3 9.3-.7 12.7 1.4a.9.9 0 0 1 .3 1.3zm.1-2.8c-3.7-2.2-9.7-2.4-13.2-1.3a1 1 0 1 1-.6-2c4-1.2 10.7-1 14.9 1.5a1 1 0 0 1-1 1.8z"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h5>Visit</h5>
+          <ul>
+            <li><a href="#">Plan your visit</a></li>
+            <li><a href="#">What to expect</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Service times</a></li>
+            <li><a href="#">Wellspring Kids</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Grow</h5>
+          <ul>
+            <li><a href="#">Watch &amp; listen</a></li>
+            <li><a href="#">Sermon library</a></li>
+            <li><a href="#">Daily devotional</a></li>
+            <li><a href="#">Reading plans</a></li>
+            <li><a href="#">Discussion guides</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Belong</h5>
+          <ul>
+            <li><a href="#">Small groups</a></li>
+            <li><a href="#">Students</a></li>
+            <li><a href="#">Young adults</a></li>
+            <li><a href="#">Volunteer</a></li>
+            <li><a href="#">Prayer requests</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Give &amp; About</h5>
+          <ul>
+            <li><a href="#">Give online</a></li>
+            <li><a href="#">Text to give</a></li>
+            <li><a href="#">Our beliefs</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Wellspring Church · A 501(c)(3) nonprofit · EIN 00-0000000</span>
+        <div class="legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky CTA -->
+  <a class="mobile-cta" href="#visit">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Plan your visit
+  </a>
+
+<script>
+(() => {
+  // ---------- Theme toggle ----------
+  const root = document.documentElement;
+  const stored = localStorage.getItem('ws-theme');
+  const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initial = stored || (sysDark ? 'dark' : 'light');
+  setTheme(initial);
+
+  function setTheme(t) {
+    root.setAttribute('data-theme', t);
+    document.getElementById('iconSun').style.display = t === 'dark' ? 'none' : 'block';
+    document.getElementById('iconMoon').style.display = t === 'dark' ? 'block' : 'none';
+  }
+  document.getElementById('theme').addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    localStorage.setItem('ws-theme', next);
+  });
+
+  // ---------- Nav scrolled state ----------
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ---------- Announcement close ----------
+  document.getElementById('announceClose').addEventListener('click', () => {
+    document.getElementById('announce').style.display = 'none';
+  });
+
+  // ---------- Mobile sheet ----------
+  const sheet = document.getElementById('sheet');
+  document.getElementById('menuOpen').addEventListener('click', () => sheet.classList.add('open'));
+  sheet.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', () => sheet.classList.remove('open')));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') sheet.classList.remove('open'); });
+
+  // ---------- Reveal on scroll ----------
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-children').forEach(el => io.observe(el));
+
+  // ---------- Newsletter (demo) ----------
+  const form = document.getElementById('nlForm');
+  const status = document.getElementById('nlStatus');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input');
+    if (!input.value) return;
+    status.textContent = 'You\'re in. Welcome — see you Friday.';
+    status.style.color = '#FFC78A';
+    input.value = '';
+    setTimeout(() => { status.textContent = ''; status.style.color = ''; }, 4500);
+  });
+
+  // ---------- Search (demo) ----------
+  document.getElementById('search').addEventListener('click', () => {
+    const q = window.prompt('Search Wellspring — sermons, events, ministries:');
+    if (q) alert('Search isn\'t wired up in this preview, but a real site would search:\n\n"' + q + '"');
+  });
+
+  // ---------- Smooth-scroll polyfill ----------
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // ---------- Hero parallax (subtle) ----------
+  const heroVid = document.querySelector('.hero-media');
+  if (heroVid && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    window.addEventListener('scroll', () => {
+      const y = Math.min(window.scrollY * 0.18, 120);
+      heroVid.style.transform = `translate3d(0, ${y}px, 0)`;
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>
